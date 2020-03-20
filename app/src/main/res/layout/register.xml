@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Rtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:drawableLeft="@drawable/pencil"
+        android:text=" REGISTER TO iTour"
+        android:textSize="29dp"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/i"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/user_name"
+        android:textSize="24dp"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="18dp"
+
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="18dp"
+        android:background="#F0D3CF"
+        android:hint="enter you user name..."
+        android:inputType="text"
+        android:paddingLeft="25dp"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:textSize="24dp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/user_sex"
+        android:textSize="24dp"
+
+        />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#F0D3CF"
+        android:paddingLeft="25dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="18dp"
+
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="18dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:text="male"
+
+            android:textSize="24dp"/>
+        <RadioButton
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:text="famale"
+            android:textSize="24dp"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/prompt_email"
+        android:textSize="24dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="5dp"
+        android:hint="enter you number phone..."
+        android:inputType="phone"
+        android:paddingLeft="25dp"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:textSize="24dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:background="#F0D3CF" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/email"
+        android:textSize="24dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="18dp"
+        android:background="#F0D3CF"
+        android:hint="enter you email..."
+        android:inputType="text"
+        android:paddingLeft="25dp"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:textSize="24dp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/prompt_password"
+        android:textSize="24dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="18dp"
+        android:background="#F0D3CF"
+        android:hint="enter you password..."
+        android:inputType="textPassword"
+        android:paddingLeft="25dp"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:textSize="24dp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/register"
+        android:background="@color/login"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        />
+
+
+
+
+</LinearLayout>
