@@ -9,46 +9,30 @@
         android:layout_height="70dp"
         android:gravity="center">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+        <TextView
+            android:id="@+id/more_back"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
             android:paddingLeft="20dp"
-            android:src="@drawable/jiantou4"/>
+            android:background="@drawable/jiantou4"
+            />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/activity_horizontal_margin"
-            android:text="                 路线制定"
-            android:textSize="25dp"
+            android:text="                 账户与个人资料"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
             />
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-     </ListView>
     <TextView
-        android:id="@+id/make"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="+"
-        android:textSize="80dp"
-        android:gravity="center"
-        android:background="@color/c"
-        />
-
-
-
-
-
-
-
-
-
+        android:layout_height="1dp"
+        android:background="@color/i"/>
 
 </LinearLayout>

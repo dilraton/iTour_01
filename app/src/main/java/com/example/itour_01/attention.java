@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class attention extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class attention extends AppCompatActivity {
         setContentView(R.layout.activity_attention);
 
         LinearLayout more = findViewById(R.id.moreattention);
-        ImageView attention_back = findViewById(R.id.attention_back);
+        TextView attention_back = findViewById(R.id.more_back);
 
         more.setOnClickListener(new View.OnClickListener() {
             @Override

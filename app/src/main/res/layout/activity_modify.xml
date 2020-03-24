@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/more_back"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/jiantou4"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="                 账户与个人资料"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/i"/>
+
+    <LinearLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="头像"
+            android:textSize="18dp"
+            android:gravity="center_vertical"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/t"
+            app:riv_oval="true"
+            android:layout_marginLeft="190dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=">"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical|right"
+            android:textSize="25dp"
+            android:textColor="@color/i"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/i"/>
+
+    <LinearLayout
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="用户昵称"
+            android:textSize="18dp"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="dilraton"
+            android:textSize="18dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=">"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical|right"
+            android:textSize="25dp"
+            android:textColor="@color/i"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/i"/>
+
+    <LinearLayout
+        android:id="@+id/sex"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="性别"
+            android:textSize="18dp"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="女"
+            android:textSize="18dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=">"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical|right"
+            android:textSize="25dp"
+            android:textColor="@color/i"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/i"/>
+
+    <LinearLayout
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="用户邮箱"
+            android:textSize="18dp"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="1418334540@qq.com"
+            android:textSize="18dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=">"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical|right"
+            android:textSize="25dp"
+            android:textColor="@color/i"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/i"/>
+
+    <LinearLayout
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="常居城市"
+            android:textSize="18dp"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="北京"
+            android:textSize="18dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=">"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical|right"
+            android:textSize="25dp"
+            android:textColor="@color/i"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/i"/>
+
+    <TextView
+        android:id="@+id/out"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="退出登录"
+        android:textSize="20dp"
+        android:background="@color/i"
+        android:gravity="center"/>
+
+</LinearLayout>

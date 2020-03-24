@@ -13,15 +13,7 @@ public class attention_moreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attention_more);
-        ImageView more_back = findViewById(R.id.more_back);
 
-        more_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(attention_moreActivity.this,attention.class);
-                startActivity(i);
-            }
-        });
 
 
 

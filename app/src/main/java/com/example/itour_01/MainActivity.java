@@ -29,26 +29,17 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView navigation;
     List<Fragment> listFragment;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         initView();
-
-
 
     }
     private void initView() {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         navigation = (BottomNavigationView) findViewById(R.id.nav_view);
-
 
         //向ViewPager添加各页面
         listFragment = new ArrayList<>();

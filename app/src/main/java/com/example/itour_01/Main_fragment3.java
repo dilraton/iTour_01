@@ -2,13 +2,17 @@ package com.example.itour_01;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class Main_fragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -16,6 +20,11 @@ public class Main_fragment3 extends Fragment {
         LinearLayout fans = view.findViewById(R.id.fans);
         LinearLayout attention = view.findViewById(R.id.attention);
         LinearLayout line = view.findViewById(R.id.line);
+        TextView name = view.findViewById(R.id.name);
+
+
+        String phone = getArguments().getString("phone");
+        Log.d("phone",phone);
 
         fans.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,4 +52,5 @@ public class Main_fragment3 extends Fragment {
 
         return view;
     }
+
 }

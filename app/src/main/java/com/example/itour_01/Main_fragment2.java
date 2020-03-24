@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -19,9 +20,19 @@ public class Main_fragment2 extends Fragment {
     private Context mContext;
     private lineListviewAdapter mAdapter = null;
     private ListView listline;
+    private TextView make;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_line, container, false);
+
+        make = view.findViewById(R.id.make);
+
+        make.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         mContext = getActivity();
 

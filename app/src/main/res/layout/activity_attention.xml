@@ -17,12 +17,13 @@
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/attention_back"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:src="@drawable/jiantou4"/>
+        <TextView
+        android:id="@+id/more_back"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/jiantou4"
+        />
 
         <TextView
             android:id="@+id/title"
