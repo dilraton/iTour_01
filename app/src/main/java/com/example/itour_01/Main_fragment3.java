@@ -7,12 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Main_fragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -23,8 +30,9 @@ public class Main_fragment3 extends Fragment {
         TextView name = view.findViewById(R.id.name);
 
 
-        String phone = getArguments().getString("phone");
-        Log.d("phone",phone);
+
+        //String phone = getArguments().getString("phone");
+       // Log.d("phone",phone);
 
         fans.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +57,30 @@ public class Main_fragment3 extends Fragment {
                 startActivity(i);
             }
         });
+         String[] says = new String[]{"111111，2222222", "33333333~", "444444444~"};
+         int[] imgIds = new int[]{R.drawable.f4, R.drawable.f5, R.drawable.f6};
+
+        String[] times = new String[]{"1天前", "3天前~", "2天前~"};
+
+
+        List<Map<String, Object>> listitem = new ArrayList<Map<String, Object>>();
+        for (int i = 0; i < says.length; i++) {
+            Map<String, Object> showitem = new HashMap<String, Object>();
+            showitem.put("touxiang", imgIds[i]);
+            showitem.put("says", says[i]);
+            showitem.put("time", times[i]);
+            listitem.add(showitem);
+        }
+
+
+        //创建一个simpleAdapter
+        SimpleAdapter myAdapter = new SimpleAdapter(getActivity(), listitem,
+                R.layout.content_listview, new String[]{"touxiang",  "says","time"},
+                new int[]{R.id.imgtou,  R.id.says, R.id.time});
+        ListView listView = view.findViewById(R.id.content);
+        listView.setAdapter(myAdapter);
+
+
 
         return view;
     }
