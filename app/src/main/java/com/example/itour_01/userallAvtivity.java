@@ -20,16 +20,12 @@ public class userallAvtivity extends AppCompatActivity {
         TextView biu = findViewById(R.id.biu);
         TextView content = findViewById(R.id.content);
 
-        BlankFragment1 blankFragment1 = new BlankFragment1();
-        BlankFragment2 blankFragment2 = new BlankFragment2();
+        addFragment1();
 
         biu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction = getSupportFragmentManager().beginTransaction();
-
-                transaction.replace(R.id.fm,blankFragment1);
-                transaction.commit();
+                addFragment1();
             }
         });
 
@@ -37,14 +33,20 @@ public class userallAvtivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 transaction = getSupportFragmentManager().beginTransaction();
-
+                BlankFragment2 blankFragment2 = new BlankFragment2();
                 transaction.replace(R.id.fm,blankFragment2);
-                transaction.commit();
+                transaction.commitAllowingStateLoss();
             }
         });
 
 
 
     }
-}
 
+    private void addFragment1() {
+        transaction = getSupportFragmentManager().beginTransaction();
+        BlankFragment1 blankFragment1 = new BlankFragment1();
+        transaction.replace(R.id.fm,blankFragment1);
+        transaction.commitAllowingStateLoss();
+    }
+}

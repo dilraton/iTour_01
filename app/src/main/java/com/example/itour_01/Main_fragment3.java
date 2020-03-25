@@ -10,18 +10,26 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class Main_fragment3 extends Fragment {
+
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_user, container, false);
         LinearLayout fans = view.findViewById(R.id.fans);
@@ -29,10 +37,12 @@ public class Main_fragment3 extends Fragment {
         LinearLayout line = view.findViewById(R.id.line);
         TextView name = view.findViewById(R.id.name);
 
+        MainActivity mainActivity = (MainActivity) getActivity();
+        String name1 = mainActivity.getName();
+        name.setText(name1);
 
 
-        //String phone = getArguments().getString("phone");
-       // Log.d("phone",phone);
+
 
         fans.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,5 +94,6 @@ public class Main_fragment3 extends Fragment {
 
         return view;
     }
+
 
 }

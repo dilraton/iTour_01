@@ -31,8 +31,8 @@ public class topfoodActiviy extends AppCompatActivity {
             }
         });
 
-        String[] names = new String[]{"锦里", "宽窄巷子~", "欢乐谷~"};
-        int[] imgIds = new int[]{R.drawable.f6, R.drawable.f5, R.drawable.f6};
+        String[] names = new String[]{"锦里", "宽窄巷子~", "熊猫基地"};
+        int[] imgIds = new int[]{R.drawable.f6, R.drawable.f5, R.drawable.f4};
 
 
         List<Map<String, Object>> listitem = new ArrayList<Map<String, Object>>();

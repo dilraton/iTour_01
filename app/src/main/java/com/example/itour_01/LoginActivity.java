@@ -72,18 +72,21 @@ public class LoginActivity extends AppCompatActivity {
                                             Toast.makeText(getApplicationContext(),"登录成功",Toast.LENGTH_LONG).show();
                                         }
                                     });
+                                    Intent data = new Intent(LoginActivity.this,MainActivity.class);
+                                    data.putExtra("phone",phone1);
+                                    startActivity(data);
 
                                 }
-                                Main_fragment3 main_fragment3 = new Main_fragment3();//声明要跳转的fragment对象
-                                Bundle bundle = new Bundle();//声明一个Bundle对象
-                                bundle.putString("phone",phone1);   //用Bundle对象携带需要传递的信息
-                                main_fragment3.setArguments(bundle);   //将bundle对象绑定到fragment，下边就是fragment的正常切换了
+                                else{
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(getApplicationContext(),"用户名或密码错误",Toast.LENGTH_LONG).show();
+                                        }
+                                    });
+                                }
 
-                                FragmentManager fragmentManager = getSupportFragmentManager();
-                                FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-                                transaction.add(R.id.viewpager,main_fragment3);
-                                transaction.commitAllowingStateLoss();
                             } else {
                                 Log.d("调试", "连接失败");
                             }

@@ -6,18 +6,26 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,14 +36,70 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     BottomNavigationView navigation;
     List<Fragment> listFragment;
+    private String phone,content;
+    String name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        phone = getIntent().getStringExtra("phone");
+        Log.d("phone",phone);
+
+
+        Intent data = getIntent();
+        if(data != null){
+            content = data.getStringExtra("content");
+        }
+
+
+        new Thread() {
+            public void run() {
+                try {
+
+                    Class.forName("com.mysql.jdbc.Driver");
+                    String url = "jdbc:mysql://rm-bp15eh5r5hsl844604o.mysql.rds.aliyuncs.com:3306/itour";
+
+                    Connection conn = DriverManager.getConnection(url, "itour_01", "QWer1234");
+
+                    if (conn != null) {
+                        Log.d("调试", "成功");
+                        Statement stmt = conn.createStatement();
+                        String sql = "select * from user where phone = \""+phone+"\"";
+                        ResultSet rs = stmt.executeQuery(sql);
+                        if(rs.next()){
+                            name = rs.getString(4);
+                            Log.d("name",name);
+
+                        }
+                        else{
+                            Log.d("查找","失败");
+                        }
+
+
+                    } else {
+                        Log.d("调试", "连接失败");
+                    }
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+
+
         initView();
 
+
+    }
+    public String getName(){
+        return name;
+    }
+    public String getContent(){
+        return content;
     }
     private void initView() {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -63,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.me:
                         viewPager.setCurrentItem(2);
+
                         return true;
 
                     default:
@@ -107,4 +172,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    }
+
+}

@@ -4,43 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:src="@drawable/jiantou4"/>
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:text="                 路线制定"
-            android:textSize="25dp"
-            />
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-     </ListView>
-    <TextView
-        android:id="@+id/make"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="+"
-        android:textSize="80dp"
+        android:text="路线制定"
+        android:textSize="25dp"
         android:gravity="center"
-        android:background="@color/c"
         />
+
+
+    <TextView
+        android:id="@+id/linecontent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="#000000"
+
+        />
+    <TextView
+        android:id="@+id/go"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="去制定"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="@drawable/shape"/>
+
 
 
 
