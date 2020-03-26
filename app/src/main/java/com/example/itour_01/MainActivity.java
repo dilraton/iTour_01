@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     List<Fragment> listFragment;
     private String phone,content;
     String name;
+    Main_fragment2 main_fragment2;
 
 
     @Override
@@ -47,12 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         phone = getIntent().getStringExtra("phone");
         Log.d("phone",phone);
-
-
-        Intent data = getIntent();
-        if(data != null){
-            content = data.getStringExtra("content");
-        }
 
 
         new Thread() {
@@ -169,6 +164,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+        if(data == null){
+            return;
+        }
+        else{
+            if(resultCode == 2&&requestCode == 1){
+                Bundle bundle = data.getExtras();
+                String content = bundle.getString("name");
+
+                main_fragment2.updateui(content);
+            }
+        }
 
     }
 

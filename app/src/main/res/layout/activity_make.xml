@@ -34,6 +34,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
+        android:text="锦里"
         android:layout_height="60dp"
         android:background="@drawable/edittext_border"/>
     <TextView

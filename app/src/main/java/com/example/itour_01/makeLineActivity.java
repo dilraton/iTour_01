@@ -35,9 +35,12 @@ public class makeLineActivity extends AppCompatActivity {
             sure.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent data = new Intent(makeLineActivity.this,MainActivity.class);
-                    data.putExtra("content",content);
-                    startActivity(data);
+                    Intent data = new Intent();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name",content);
+                    data.putExtras(bundle);
+                    setResult(2,data);
+                    finish();
 
                 }
             });

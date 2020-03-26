@@ -17,8 +17,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Main_fragment2 extends Fragment {
-    private String content;
+
     private TextView linecontent;
+    TextView go;
 
 
 
@@ -26,26 +27,24 @@ public class Main_fragment2 extends Fragment {
         View view = inflater.inflate(R.layout.activity_line, container, false);
 
         linecontent = view.findViewById(R.id.linecontent);
-        TextView go = view.findViewById(R.id.go);
+        go = view.findViewById(R.id.go);
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent data = new Intent(getActivity(),makeLineActivity.class);
-                startActivity(data);
+                startActivityForResult(data,1);
 
             }
         });
-        MainActivity mainActivity = (MainActivity) getActivity();
-        if(mainActivity.getContent() != null){
-            content = mainActivity.getContent();
-            linecontent.setText(content);
-            go.setText("再次添加路线");
-        }
 
 
 
         return view;
     }
 
-
+    public void updateui(String content) {
+// TODO Auto-generated method stub
+        linecontent.setText(content);
+        go.setText("再次添加路线");
+    }
 }
