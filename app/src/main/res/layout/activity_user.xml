@@ -28,6 +28,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
                 <TextView
+                    android:id="@+id/modify"
                     android:layout_width="40dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="20dp"
@@ -78,7 +79,7 @@
                     <TextView
                         android:layout_width="95dp"
                         android:layout_height="45dp"
-                        android:text="0"
+                        android:text="2"
                         android:textSize="20dp"
                         android:gravity="center"
                         />
@@ -99,7 +100,7 @@
                     <TextView
                         android:layout_width="95dp"
                         android:layout_height="45dp"
-                        android:text="0"
+                        android:text="2"
                         android:textSize="20dp"
                         android:gravity="center"
                         />
@@ -120,7 +121,7 @@
                     <TextView
                         android:layout_width="95dp"
                         android:layout_height="45dp"
-                        android:text="0"
+                        android:text="2"
                         android:textSize="20dp"
                         android:gravity="center"
                         />
@@ -141,7 +142,7 @@
                     <TextView
                         android:layout_width="95dp"
                         android:layout_height="45dp"
-                        android:text="0"
+                        android:text="2"
                         android:textSize="20dp"
                         android:gravity="center"
                         />
@@ -161,10 +162,15 @@
 
 
             <TextView
+                android:id="@+id/send"
                 android:layout_width="match_parent"
-                android:layout_height="6dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="340dp"
                 android:background="@color/i"
+                android:text="发    布"
+                android:textColor="#ffffff"
+                android:textSize="23dp"
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -174,12 +180,11 @@
                 android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="355dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginRight="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/send">
 
 
 

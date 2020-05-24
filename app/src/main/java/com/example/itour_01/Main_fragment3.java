@@ -36,13 +36,20 @@ public class Main_fragment3 extends Fragment {
         LinearLayout attention = view.findViewById(R.id.attention);
         LinearLayout line = view.findViewById(R.id.line);
         TextView name = view.findViewById(R.id.name);
+        TextView modify = view.findViewById(R.id.modify);
 
         MainActivity mainActivity = (MainActivity) getActivity();
         String name1 = mainActivity.getName();
         name.setText(name1);
 
 
-
+        modify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(),modifyActivity.class);
+                startActivity(i);
+            }
+        });
 
         fans.setOnClickListener(new View.OnClickListener() {
             @Override

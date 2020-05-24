@@ -20,6 +20,8 @@ public class Main_fragment2 extends Fragment {
 
     private TextView linecontent;
     TextView go;
+    String content = null;
+    int i = 0;
 
 
 
@@ -31,20 +33,18 @@ public class Main_fragment2 extends Fragment {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                i = 1;
                 Intent data = new Intent(getActivity(),makeLineActivity.class);
                 startActivityForResult(data,1);
 
             }
         });
-
-
+        linecontent.setText("IFS");
+        go.setText("再次添加路线");
 
         return view;
     }
 
-    public void updateui(String content) {
-// TODO Auto-generated method stub
-        linecontent.setText(content);
-        go.setText("再次添加路线");
-    }
+
+
 }

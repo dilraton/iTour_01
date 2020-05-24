@@ -101,6 +101,7 @@
                         android:textColor="#ffffff"
                         />
                     <TextView
+                        android:id="@+id/food"
                         android:layout_width="120dp"
                         android:layout_height="75dp"
                         android:text="美食人气榜"

@@ -1,7 +1,10 @@
 package com.example.itour_01;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     BottomNavigationView navigation;
     List<Fragment> listFragment;
-    private String phone,content;
+    private String phone,content = "0";
     String name;
-    Main_fragment2 main_fragment2;
+    Main_fragment2 main_fragment2 = new Main_fragment2();
 
 
     @Override
@@ -88,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
 
-
     }
     public String getName(){
         return name;
@@ -118,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
                         viewPager.setCurrentItem(0);
                         return true;
                     case R.id.create:
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putString("content",content);
+                        main_fragment2.setArguments(bundle1);
                         viewPager.setCurrentItem(1);
                         return true;
                     case R.id.me:
@@ -168,15 +173,22 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode,data);
+        Log.d("进入","result");
         if(data == null){
+            Log.d("返回","null");
             return;
         }
         else{
-            if(resultCode == 2&&requestCode == 1){
-                Bundle bundle = data.getExtras();
-                String content = bundle.getString("name");
+            Log.d("获取到","data");
+            switch (resultCode){
+                case 1111:
+                    Bundle bundle = data.getExtras();
+                    content = bundle.getString("content");
 
-                main_fragment2.updateui(content);
+
+                    break;
+                default:
+                    break;
             }
         }
 

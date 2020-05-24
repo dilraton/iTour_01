@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -23,7 +24,14 @@ public class Main_fragment1 extends Fragment {
 
 
         LinearLayout search = view.findViewById(R.id.search);
-
+        TextView food = view.findViewById(R.id.food);
+        food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(),topfoodActiviy.class);
+                startActivity(i);
+            }
+        });
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override

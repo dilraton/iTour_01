@@ -3,6 +3,7 @@ package com.example.itour_01;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -31,8 +32,8 @@ public class topfoodActiviy extends AppCompatActivity {
             }
         });
 
-        String[] names = new String[]{"锦里", "宽窄巷子~", "熊猫基地"};
-        int[] imgIds = new int[]{R.drawable.f6, R.drawable.f5, R.drawable.f4};
+        String[] names = new String[]{"锦里", "宽窄巷子~", "春熙路"};
+        int[] imgIds = new int[]{R.drawable.f7, R.drawable.f8, R.drawable.f9};
 
 
         List<Map<String, Object>> listitem = new ArrayList<Map<String, Object>>();
@@ -50,6 +51,18 @@ public class topfoodActiviy extends AppCompatActivity {
                 new int[]{R.id.name,R.id.pic});
         ListView listView = findViewById(R.id.food);
         listView.setAdapter(myAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle bundle = new Bundle();
+                bundle.putString("sname",names[position]);
+                bundle.putInt("photo",imgIds[position]);
+                Intent intent = new Intent();
+                intent.putExtras(bundle);
+                intent.setClass(topfoodActiviy.this,visit_detail.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

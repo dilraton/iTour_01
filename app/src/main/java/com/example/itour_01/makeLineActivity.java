@@ -30,16 +30,16 @@ public class makeLineActivity extends AppCompatActivity {
         });
 
         if(lineContent != null){
-            content = lineContent.getText().toString();
-            Log.d("content",content);
             sure.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    content = lineContent.getText().toString();
+                    Log.d("content",content);
                     Intent data = new Intent();
                     Bundle bundle = new Bundle();
-                    bundle.putString("name",content);
+                    bundle.putString("content",content);
                     data.putExtras(bundle);
-                    setResult(2,data);
+                    setResult(1111,data);
                     finish();
 
                 }
