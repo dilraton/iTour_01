@@ -77,6 +77,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/good"
                         android:layout_width="95dp"
                         android:layout_height="45dp"
                         android:text="2"
@@ -98,6 +99,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/fan"
                         android:layout_width="95dp"
                         android:layout_height="45dp"
                         android:text="2"
@@ -119,6 +121,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/att"
                         android:layout_width="95dp"
                         android:layout_height="45dp"
                         android:text="2"
@@ -140,6 +143,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/lines"
                         android:layout_width="95dp"
                         android:layout_height="45dp"
                         android:text="2"

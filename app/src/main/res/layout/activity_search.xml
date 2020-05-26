@@ -22,11 +22,13 @@
             android:background="@drawable/shape2"
             >
             <ImageView
+                android:id="@+id/search"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/search"/>
 
             <EditText
+                android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="搜索"
@@ -44,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="取消"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:gravity="center"/>
     </LinearLayout>
 
@@ -62,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="历史"
-            android:textSize="20dp"
+            android:textSize="17dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -72,9 +74,9 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/history"
                 android:layout_width="75dp"
                 android:layout_height="30dp"
-                android:text="北京"
                 android:textSize="18dp"
                 android:gravity="center"
                 android:layout_gravity="center_vertical"

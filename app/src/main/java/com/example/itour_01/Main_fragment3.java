@@ -2,6 +2,8 @@ package com.example.itour_01;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +39,11 @@ public class Main_fragment3 extends Fragment {
         LinearLayout line = view.findViewById(R.id.line);
         TextView name = view.findViewById(R.id.name);
         TextView modify = view.findViewById(R.id.modify);
+
+        TextView good = view.findViewById(R.id.good);
+        TextView fan = view.findViewById(R.id.fan);
+        TextView lines = view.findViewById(R.id.lines);
+        TextView att = view.findViewById(R.id.att);
 
         MainActivity mainActivity = (MainActivity) getActivity();
         String name1 = mainActivity.getName();
@@ -97,7 +104,86 @@ public class Main_fragment3 extends Fragment {
         ListView listView = view.findViewById(R.id.content);
         listView.setAdapter(myAdapter);
 
+        Handler handler = new Handler() {
 
+            @Override
+
+            public void handleMessage(Message msg) {
+
+                super.handleMessage(msg);
+
+                if (msg.what == 1) {
+
+                    Bundle data = msg.getData();
+
+                    String Good = data.getString("good");
+                    String Fan = data.getString("fan");
+                    String Att = data.getString("att");
+                    String Line = data.getString("line");
+
+                    //设置UI
+
+
+
+                    good.setText(Good);
+                    fan.setText(Fan);
+                    att.setText(Att);
+                    lines.setText(Line);
+
+
+                }
+
+            }
+
+        };
+
+
+        new Thread() {
+            public void run() {
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    String url = "jdbc:mysql://rm-2zemllxq8jl06818eao.mysql.rds.aliyuncs.com:3306/itour";
+
+                    Connection conn = DriverManager.getConnection(url, "system", "QWer1234");
+
+                    if (conn != null) {
+                        Log.d("调试", "成功");
+                        Statement stmt = conn.createStatement();
+                        String sql = "select * from user_details where phone = (select phone from user where name = \""+name1+"\")";
+                        ResultSet rs = stmt.executeQuery(sql);
+                        if(rs.next()){
+                            String Good = rs.getString(6);
+                            String Fan = rs.getString(5);
+                            String Att = rs.getString(4);
+                            String Line = rs.getString(7);
+
+                            Message msg = new Message();
+                            Bundle data = new Bundle();
+
+                            data.putString("good", Good);
+                            data.putString("fan",Fan);
+                            data.putString("att", Att);
+                            data.putString("line",Line);
+
+                            msg.setData(data);
+
+                            msg.what = 1;
+
+                            //发消息到主线程
+
+                            handler.sendMessage(msg);
+
+                        }
+                    } else {
+                        Log.d("调试", "连接失败");
+                    }
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
 
         return view;
     }

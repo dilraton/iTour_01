@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 try {
 
                     Class.forName("com.mysql.jdbc.Driver");
-                    String url = "jdbc:mysql://rm-bp15eh5r5hsl844604o.mysql.rds.aliyuncs.com:3306/itour";
+                    String url = "jdbc:mysql://rm-2zemllxq8jl06818eao.mysql.rds.aliyuncs.com:3306/itour";
 
-                    Connection conn = DriverManager.getConnection(url, "itour_01", "QWer1234");
+                    Connection conn = DriverManager.getConnection(url, "system", "QWer1234");
 
                     if (conn != null) {
                         Log.d("调试", "成功");
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         String sql = "select * from user where phone = \""+phone+"\"";
                         ResultSet rs = stmt.executeQuery(sql);
                         if(rs.next()){
-                            name = rs.getString(4);
+                            name = rs.getString(5);
                             Log.d("name",name);
 
                         }

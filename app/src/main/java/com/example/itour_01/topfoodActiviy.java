@@ -32,7 +32,7 @@ public class topfoodActiviy extends AppCompatActivity {
             }
         });
 
-        String[] names = new String[]{"锦里", "宽窄巷子~", "春熙路"};
+        String[] names = new String[]{"锦里", "宽窄巷子", "春熙路"};
         int[] imgIds = new int[]{R.drawable.f7, R.drawable.f8, R.drawable.f9};
 
 

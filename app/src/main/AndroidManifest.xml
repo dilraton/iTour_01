@@ -40,6 +40,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".search_detail"></activity>
+        <activity android:name=".visit_detail"></activity>
         <activity android:name=".modifyActivity"></activity>
         <activity android:name=".makeLineActivity"></activity>
         <activity android:name=".topfoodActiviy">
